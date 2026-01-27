@@ -220,11 +220,10 @@ const orgName = computed(() => {
 
 // Build route object for package link (with optional version)
 function packageRoute(ver?: string | null) {
-  const segments = packageName.value.split('/')
-  if (ver) {
-    segments.push('v', ver)
+  return {
+    name: 'package' as const,
+    params: { ...parsePackageRouteParams(packageName.value), version: ver },
   }
-  return { name: 'package' as const, params: { package: segments } }
 }
 
 // Format file size
