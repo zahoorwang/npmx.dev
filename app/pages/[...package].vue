@@ -831,24 +831,8 @@ function handleClick(event: MouseEvent) {
         </dl>
       </header>
 
-      <!-- Binary-only packages: Show only execute command (no install) -->
-      <section v-if="isBinaryOnly" class="area-install scroll-mt-20">
-        <div class="flex flex-wrap items-center justify-between mb-3">
-          <h2 id="run-heading" class="text-xs text-fg-subtle uppercase tracking-wider">
-            {{ $t('package.run.title') }}
-          </h2>
-          <!-- Package manager tabs -->
-          <PackageManagerTabs />
-        </div>
-        <ExecuteCommandTerminal
-          :package-name="pkg.name"
-          :jsr-info="jsrInfo"
-          :is-create-package="isCreatePkg"
-        />
-      </section>
-
-      <!-- Regular packages: Install command with optional run command -->
-      <section v-else id="get-started" class="area-install scroll-mt-20">
+      <!-- Install/Run command section -->
+      <section id="get-started" class="area-install scroll-mt-20">
         <div class="flex flex-wrap items-center justify-between mb-3">
           <h2
             id="get-started-heading"
@@ -875,6 +859,8 @@ function handleClick(event: MouseEvent) {
           :types-package-name="typesPackageName"
           :executable-info="executableInfo"
           :create-package-info="createPackageInfo"
+          :is-binary-only="isBinaryOnly"
+          :is-create-package="isCreatePkg"
         />
       </section>
 
