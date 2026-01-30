@@ -6,7 +6,6 @@ const props = defineProps<{ title: string; htmlContent: string; date: string }>(
     <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">
       {{ title }}
     </h1>
-    <!-- <time class="text-sm text-gray-500 dark:text-gray-400"> -->
 
     <DateTime
       :datetime="date"

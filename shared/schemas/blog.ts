@@ -2,12 +2,12 @@ import { object, string, boolean, array, optional } from 'valibot'
 import type { InferOutput } from 'valibot'
 
 export const BlogPostSchema = object({
+  author: string(),
   title: string(),
   date: string(),
   description: string(),
   slug: string(),
   excerpt: optional(string()),
-  author: optional(string()),
   tags: optional(array(string())),
   draft: optional(boolean()),
 })
