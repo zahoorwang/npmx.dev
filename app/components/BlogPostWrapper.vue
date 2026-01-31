@@ -13,16 +13,17 @@ useSeoMeta({
   ogType: 'article',
 })
 
-// TODO: Hardcoded for testing - waiting on constellation/slingshot work
-// Using Daniel Roe's post for testing: https://bsky.app/profile/danielroe.dev/post/3mcg6svsgsm2k
-const BSKY_DID = 'did:plc:jbeaa5kdaladzwq3r7f5xgwe'
-// const BSKY_DID = 'did:plc:5ixnpdbogli5f7fbbee5fmuq'
-const BSKY_POST_ID = '3mcg6svsgsm2k'
+// Hardcoded values for reference/testing
+// const BSKY_DID = 'did:plc:jbeaa5kdaladzwq3r7f5xgwe'
+// const BSKY_DID = 'did:plc:5ixnpdbogli5f7fbbee5fmuq' // Albie
+// const BSKY_POST_ID = '3mcg6svsgsm2k'
 // const BSKY_POST_ID = '3mdoijswyz22u'
 
-const blueskyPostUri = computed(() =>
-  BSKY_POST_ID ? `at://${BSKY_DID}/app.bsky.feed.post/${BSKY_POST_ID}` : null,
-)
+const slug = computed(() => props.frontmatter?.slug)
+
+// Use Constellation to find the Bluesky post linking to this blog post
+const { data: blueskyLink } = useBlogPostBlueskyLink(slug)
+const blueskyPostUri = computed(() => blueskyLink.value?.postUri ?? null)
 </script>
 
 <template>

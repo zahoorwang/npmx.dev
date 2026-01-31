@@ -7,6 +7,7 @@ export const BlogPostSchema = object({
   date: pipe(string(), isoDate()),
   description: string(),
   path: string(),
+  slug: string(),
   excerpt: optional(string()),
   tags: optional(array(string())),
   draft: optional(boolean()),
