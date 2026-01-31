@@ -100,6 +100,7 @@
     "go_back_home": "Retour à l'accueil",
     "view_on_npm": "voir sur npm",
     "per_week": "/ semaine",
+    "vanity_downloads_hint": "Métrique de vanité : aucun paquet affiché | Métrique de vanité : pour le paquet affiché | Métrique de vanité : somme des {count} paquets affichés",
     "sort": {
       "name": "nom",
       "role": "rôle",
@@ -321,7 +322,6 @@
       "size": "Taille",
       "deps": "Dépendances",
       "updated": "Mis à jour",
-      "install": "Installer",
       "readme": "Readme",
       "maintainers": "Mainteneurs",
       "keywords": "Mots-clés",
@@ -348,9 +348,7 @@
     },
     "modal": {
       "title": "Connecteur local",
-      "close_modal": "Fermer la fenêtre",
       "connected": "Connecté·e",
-      "logged_in_as": "Connecté·e en tant que {'@'}{user}",
       "connected_hint": "Vous pouvez maintenant gérer les paquets et les organisations depuis l'interface web.",
       "disconnect": "Se déconnecter",
       "run_hint": "Exécutez le connecteur sur votre machine pour activer les fonctionnalités d'administration.",
@@ -496,7 +494,6 @@
   "claim": {
     "modal": {
       "title": "Réserver un nom de paquet",
-      "close_modal": "Fermer la fenêtre",
       "success": "Paquet réservé !",
       "success_detail": "{name}{'@'}0.0.0 a été publié sur npm.",
       "success_hint": "Vous pouvez maintenant publier de nouvelles versions de ce paquet avec npm publish.",
